@@ -1,0 +1,14 @@
+{
+  "uuid": "research-watcher@matt.mines.edu",
+  "name": "Research Watcher",
+  "description": "Track new academic research papers from your system tray",
+  "shell-version": [
+    "3.36",
+    "3.38",
+    "40",
+    "42",
+    "43",
+    "44"
+  ],
+  "url": ""
+}
