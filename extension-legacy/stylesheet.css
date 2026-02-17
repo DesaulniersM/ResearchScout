@@ -5,15 +5,18 @@
 }
 
 .research-scout-summary {
-    font-size: 0.9em;
+    font-size: 0.95em;
     font-style: italic;
-    color: #ccc;
+    color: #2e3436 !important; /* Standard GNOME dark charcoal */
     padding: 5px 15px;
     max-width: 300px;
+    opacity: 1.0 !important;    /* Force full opacity */
 }
 
 .research-scout-summary > label {
     white-space: normal;
+    color: #2e3436 !important; /* Ensure the text itself is dark */
+    opacity: 1.0 !important;
 }
 
 .research-scout-badge {
