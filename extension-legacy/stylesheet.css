@@ -1,10 +1,10 @@
-.research-watcher-header {
+.research-scout-header {
     font-weight: bold;
     color: #e67e22;
     padding: 10px;
 }
 
-.research-watcher-summary {
+.research-scout-summary {
     font-size: 0.9em;
     font-style: italic;
     color: #ccc;
@@ -12,11 +12,11 @@
     max-width: 300px;
 }
 
-.research-watcher-summary > label {
+.research-scout-summary > label {
     white-space: normal;
 }
 
-.research-watcher-badge {
+.research-scout-badge {
     background-color: #e67e22;
     color: white;
     font-size: 10px;

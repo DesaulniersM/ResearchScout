@@ -1,5 +1,5 @@
 {
-  "uuid": "research-watcher@local.dev",
+  "uuid": "research-scout@local.dev",
   "name": "ResearchScout",
   "description": "Track new academic research papers from your system tray",
   "shell-version": [

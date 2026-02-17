@@ -30,12 +30,12 @@ GNOME extensions must be linked to your local extensions directory to be recogni
 mkdir -p ~/.local/share/gnome-shell/extensions
 
 # Link the extension folder (RUN THIS FROM INSIDE THE PROJECT FOLDER)
-ln -s "$(pwd)/extension-legacy" ~/.local/share/gnome-shell/extensions/research-watcher@local.dev
+ln -s "$(pwd)/extension-legacy" ~/.local/share/gnome-shell/extensions/research-scout@local.dev
 ```
 
 **Note:** After linking, press `Alt + F2`, type `r`, and hit `Enter` to restart GNOME Shell. Then enable it:
 ```bash
-gnome-extensions enable research-watcher@local.dev
+gnome-extensions enable research-scout@local.dev
 ```
 
 ### 3. Initialize the Backend

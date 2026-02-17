@@ -21,7 +21,7 @@ class ResearchScoutIndicator extends PanelMenu.Button {
         this._badge = new St.Label({
             text: '',
             y_align: Clutter.ActorAlign.CENTER,
-            style_class: 'research-watcher-badge'
+            style_class: 'research-scout-badge'
         });
         this._badge.hide();
 
@@ -75,7 +75,7 @@ class ResearchScoutIndicator extends PanelMenu.Button {
             // Status Header
             let header = new PopupMenu.PopupMenuItem(data.message || "ResearchScout");
             header.setSensitive(false);
-            header.label.add_style_class_name('research-watcher-header');
+            header.label.add_style_class_name('research-scout-header');
             this.menu.addMenuItem(header);
             
             this.menu.addMenuItem(new PopupMenu.PopupSeparatorMenuItem());
@@ -88,7 +88,7 @@ class ResearchScoutIndicator extends PanelMenu.Button {
                     summaryItem.label.clutter_text.line_wrap = true;
                     summaryItem.label.clutter_text.line_wrap_mode = 2; // Pango.WrapMode.WORD
                     summaryItem.label.clutter_text.ellipsize = 0;   // Pango.EllipsizeMode.NONE
-                    summaryItem.label.add_style_class_name('research-watcher-summary');
+                    summaryItem.label.add_style_class_name('research-scout-summary');
                     summaryItem.setSensitive(false);
                     subMenu.menu.addMenuItem(summaryItem);
                     
@@ -133,7 +133,7 @@ function init() {
 
 function enable() {
     indicator = new ResearchScoutIndicator();
-    Main.panel.addToStatusArea('research-watcher-indicator', indicator);
+    Main.panel.addToStatusArea('research-scout-indicator', indicator);
 }
 
 function disable() {
