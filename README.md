@@ -1,4 +1,4 @@
-# Research Watcher (Ubuntu Widget)
+# ResearchScout (Ubuntu Widget)
 
 A lightweight GNOME extension and Python backend that tracks new academic research papers from ArXiv and provides simple executive summaries directly in your system tray. Currently only works for Ubuntu 20.04/22.04. I will be updating it to work for Ubuntu 24.04 at some point.
 

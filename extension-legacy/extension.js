@@ -3,12 +3,12 @@ const Main = imports.ui.main;
 const PanelMenu = imports.ui.panelMenu;
 const PopupMenu = imports.ui.popupMenu;
 
-const STATUS_FILE = GLib.get_home_dir() + '/.cache/research-watcher/status.json';
+const STATUS_FILE = GLib.get_home_dir() + '/.cache/research-scout/status.json';
 
-let ResearchWatcherIndicator = GObject.registerClass(
-class ResearchWatcherIndicator extends PanelMenu.Button {
+let ResearchScoutIndicator = GObject.registerClass(
+class ResearchScoutIndicator extends PanelMenu.Button {
     _init() {
-        super._init(0, "Research Watcher");
+        super._init(0, "ResearchScout");
 
         // Container for icon and badge
         this._container = new St.BoxLayout();
@@ -73,7 +73,7 @@ class ResearchWatcherIndicator extends PanelMenu.Button {
             }
 
             // Status Header
-            let header = new PopupMenu.PopupMenuItem(data.message || "Research Watcher");
+            let header = new PopupMenu.PopupMenuItem(data.message || "ResearchScout");
             header.setSensitive(false);
             header.label.add_style_class_name('research-watcher-header');
             this.menu.addMenuItem(header);
@@ -114,7 +114,7 @@ class ResearchWatcherIndicator extends PanelMenu.Button {
 
         } catch (e) {
             this.menu.addMenuItem(new PopupMenu.PopupMenuItem("Error parsing data"));
-            log("ResearchWatcher Error: " + e.message);
+            log("ResearchScout Error: " + e.message);
         }
     }
     
@@ -132,7 +132,7 @@ function init() {
 }
 
 function enable() {
-    indicator = new ResearchWatcherIndicator();
+    indicator = new ResearchScoutIndicator();
     Main.panel.addToStatusArea('research-watcher-indicator', indicator);
 }
 

@@ -1,6 +1,6 @@
 {
-  "uuid": "research-watcher@matt.mines.edu",
-  "name": "Research Watcher",
+  "uuid": "research-watcher@local.dev",
+  "name": "ResearchScout",
   "description": "Track new academic research papers from your system tray",
   "shell-version": [
     "3.36",

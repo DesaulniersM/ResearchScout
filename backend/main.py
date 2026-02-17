@@ -5,9 +5,9 @@ from pathlib import Path
 from fetchers import fetch_arxiv_papers
 from summarizer import summarize_text
 
-CONFIG_DIR = Path.home() / ".config" / "research-watcher"
+CONFIG_DIR = Path.home() / ".config" / "research-scout"
 CONFIG_FILE = CONFIG_DIR / "config.json"
-CACHE_DIR = Path.home() / ".cache" / "research-watcher"
+CACHE_DIR = Path.home() / ".cache" / "research-scout"
 STATUS_FILE = CACHE_DIR / "status.json"
 
 DEFAULT_CONFIG = {
