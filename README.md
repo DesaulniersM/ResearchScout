@@ -1,8 +1,8 @@
 # ResearchScout (Ubuntu Widget)
 
-A lightweight GNOME extension and Python backend that tracks new academic research papers from ArXiv and provides simple executive summaries directly in your system tray. Currently only works for Ubuntu 20.04/22.04. I will be updating it to work for Ubuntu 24.04 at some point.
+A lightweight GNOME extension and Python backend that tracks new academic research papers from ArXiv and provides simple executive summaries directly in your system tray. Now supports Ubuntu 20.04, 22.04, and 24.04.
 
-Designed for Ubuntu (20.04, 22.04) and GNOME 3.36+.
+Designed for Ubuntu (20.04, 22.04, 24.04) and GNOME 3.36 to 47.
 
 ## Features
 - **Periodic Queries:** Monitor specific ArXiv categories, keywords, or authors.
@@ -15,10 +15,14 @@ Designed for Ubuntu (20.04, 22.04) and GNOME 3.36+.
 ## Getting Started
 
 ### 1. Prerequisites
-You will need Python 3.8+ (Python 3.10 recommended).
+You will need Python 3.8+. For Ubuntu 24.04+, using a virtual environment is highly recommended.
 
 ```bash
-# Install Python dependencies in your project folder
+# Set up a virtual environment (recommended for Ubuntu 24.04+)
+python3 -m venv .venv
+source .venv/bin/activate
+
+# Install Python dependencies
 pip3 install feedparser sumy nltk
 ```
 
@@ -30,10 +34,14 @@ GNOME extensions must be linked to your local extensions directory to be recogni
 mkdir -p ~/.local/share/gnome-shell/extensions
 
 # Link the extension folder (RUN THIS FROM INSIDE THE PROJECT FOLDER)
+# For Ubuntu 20.04 / 22.04 (GNOME < 45):
 ln -s "$(pwd)/extension-legacy" ~/.local/share/gnome-shell/extensions/research-scout@local.dev
+
+# For Ubuntu 24.04 (GNOME 45+):
+# ln -s "$(pwd)/extension-modern" ~/.local/share/gnome-shell/extensions/research-scout@local.dev
 ```
 
-**Note:** After linking, press `Alt + F2`, type `r`, and hit `Enter` to restart GNOME Shell. Then enable it:
+**Note:** After linking, press `Alt + F2`, type `r`, and hit `Enter` to restart GNOME Shell (for X11). For Wayland (default on newer Ubuntu), you may need to log out and log back in. Then enable it:
 ```bash
 gnome-extensions enable research-scout@local.dev
 ```
@@ -49,7 +57,7 @@ python3 backend/main.py
 
 ## Configuration
 You can customize your research interests by editing the config file created at:
-`~/.config/research-watcher/config.json`
+`~/.config/research-scout/config.json`
 
 **Example Query:**
 To track "Augmented Reality" by "Maria Gorlatova" in the Computer Vision category:
@@ -69,14 +77,15 @@ To have the widget update automatically every Monday at midnight, add a cron job
 1. Run `crontab -e`.
 2. Add this line at the bottom (replace `/path/to/project` with your actual path):
 ```cron
-0 0 * * 1 /usr/bin/python3 /path/to/project/backend/main.py >> /path/to/project/cron.log 2>&1
+0 0 * * 1 /path/to/project/.venv/bin/python3 /path/to/project/backend/main.py >> /path/to/project/cron.log 2>&1
 ```
 
 ---
 
 ## Project Structure
 - `/backend`: Python logic for fetching and summarizing.
-- `/extension-legacy`: GNOME 3.36/42+ compatible JavaScript UI.
+- `/extension-legacy`: GNOME 3.36 to 44 compatible JavaScript UI (GJS).
+- `/extension-modern`: GNOME 45+ compatible JavaScript UI (ESM).
 - `status.json`: The "contract" file where the backend stores data for the UI.
 
 ## License

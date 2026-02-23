@@ -1,0 +1,11 @@
+{
+  "uuid": "research-scout@local.dev",
+  "name": "ResearchScout",
+  "description": "Track new academic research papers from your system tray (GNOME 45+ version)",
+  "shell-version": [
+    "45",
+    "46",
+    "47"
+  ],
+  "url": ""
+}

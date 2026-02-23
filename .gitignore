@@ -32,6 +32,9 @@ status.json
 
 # User Configuration (local)
 config.json
+secrets.json
+*.key
+*.token
 .env
 .cache/
 .config/
